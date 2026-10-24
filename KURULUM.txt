@@ -1,0 +1,23 @@
+SEZGİNLER TİCARET — NETLIFY + CLOUDFLARE
+
+Bu paket Netlify üzerinde bir bağlantı katmanı yayınlar. Sayfalar ve güncel veriler mevcut Cloudflare Worker'dan alınır. D1 veritabanı, yönetici şifresi ve panel Cloudflare'da kalır. Cloudflare sitesini silmeyin.
+
+KURULUM
+1. ZIP'i bilgisayarda açın.
+2. GitHub'da yeni, tercihen private bir repository oluşturun.
+3. Add file → Upload files ile netlify.toml dosyasını, public ve netlify klasörlerini yükleyin. Klasör yapısı korunmalı; netlify.toml repository kökünde bulunmalı.
+4. Netlify → Add new project → Import an existing project → GitHub.
+5. Oluşturduğunuz repository'yi seçin.
+6. Build command alanını boş bırakın. Publish directory: public. Deploy yapın.
+7. Netlify adresinde ana sayfa, bir ürün sayfası, /sitemap.xml ve /admin yollarını kontrol edin. Kendi telefonunuzla bir test talebi gönderip panelde geldiğini kontrol edin.
+
+Bu paketi Netlify Drop'a sürüklemek edge function'ı derlemez; GitHub bağlantısıyla yayınlayın.
+
+PANEL
+https://amasyaisipompasi.taraftar38.workers.dev/admin
+Netlify'deki /admin adresi de bu panele yönlendirir. Ürün ve iletişim güncellemeleri Cloudflare'dan canlı alınır. Yeni veritabanı veya şifre kurulumu gerekmez. Bu paket ürünleri kopyalamaz; Cloudflare'daki mevcut yayını gösterir. Daikin güncellemesi için önce önceki worker.js paketini Cloudflare'da yayınlamış olmalısınız.
+
+SEO
+Netlify sayfalarındaki canonical ve site haritası adresleri ziyaret edilen Netlify alanına uyarlanır. Google ve Bing doğrulaması yeni adres için ayrıca yapılır. Asıl alan adınız belli olduğunda Cloudflare ve Netlify kopyalarının canonical/yönlendirme tercihleri birlikte düzenlenmelidir.
+
+Netlify ve Cloudflare kullanım limitleri geçerlidir; sınırsız ücretsiz kullanım garantisi yoktur. Henüz hesabınıza yayınlama yapılmadı. Paket yerel yönlendirme ve güvenlik testlerinden geçirildi; gerçek Netlify yayını sonrası son kontrol gerekir.
